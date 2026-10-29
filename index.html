@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-page="home">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Upper Room Church of God in Christ · Raleigh, NC</title>
+    <meta
+      name="description"
+      content="The God First Experience in Raleigh, NC. Join Bishop Patrick L. Wooden, Sr. and First Lady Pamela Wooden for Sunday worship at 8 & 11 AM and Thursday Bible Study at 7:30 PM."
+    />
+    <meta name="theme-color" content="#040915" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://i.ytimg.com" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Upper Room Church of God in Christ" />
+    <meta property="og:title" content="Upper Room COGIC · The God First Experience" />
+    <meta
+      property="og:description"
+      content="There's room for you. Sunday worship at 8 & 11 AM, Thursday Bible Study at 7:30 PM. 3300 Idlewood Village Drive, Raleigh, NC."
+    />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script>
+      (function () {
+        var root = document.documentElement
+        var stored = null
+        try {
+          stored = localStorage.getItem('ur-motion')
+        } catch (e) {}
+        var reduced =
+          stored === 'reduced' ||
+          (stored !== 'full' && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+        root.setAttribute('data-motion', reduced ? 'reduced' : 'full')
+      })()
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Church",
+        "name": "Upper Room Church of God in Christ",
+        "alternateName": "Upper Room COGIC",
+        "url": "https://upperroomgospel.org",
+        "logo": "https://upperroomgospel.org/brand/logo-official-navy.png",
+        "image": "https://upperroomgospel.org/og-image.jpg",
+        "telephone": "+1-919-829-6160",
+        "email": "info@plwooden.org",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3300 Idlewood Village Drive",
+          "addressLocality": "Raleigh",
+          "addressRegion": "NC",
+          "postalCode": "27610",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://www.youtube.com/@GodFirstOfficialPage",
+          "https://www.facebook.com/UpperRoomGospel/",
+          "https://www.instagram.com/ur_cogic/",
+          "https://twitter.com/UpperRoomGospel"
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:30",
+            "closes": "17:00"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Static copies of every form so Netlify Forms can detect them at deploy time. -->
+    <div hidden aria-hidden="true">
+      <form name="prayer-request" data-netlify="true" netlify-honeypot="bot-field">
+        <input name="bot-field" /><input name="name" /><input name="email" /><input name="phone" />
+        <input name="subject" /><textarea name="message"></textarea><input name="private" />
+      </form>
+      <form name="plan-visit" data-netlify="true" netlify-honeypot="bot-field">
+        <input name="bot-field" /><input name="name" /><input name="email" /><input name="phone" />
+        <input name="service" /><input name="visit-date" /><input name="party-size" />
+        <input name="kids" /><textarea name="notes"></textarea>
+      </form>
+      <form name="join-ministry" data-netlify="true" netlify-honeypot="bot-field">
+        <input name="bot-field" /><input name="ministry" /><input name="name" /><input name="email" />
+        <input name="phone" /><input name="interest" /><textarea name="message"></textarea>
+      </form>
+      <form name="booking-request" data-netlify="true" netlify-honeypot="bot-field">
+        <input name="bot-field" /><input name="speaker" /><input name="organization" />
+        <input name="pastor" /><input name="first-name" /><input name="last-name" />
+        <input name="requested-date" /><input name="requested-time" /><input name="email" />
+        <input name="phone" /><input name="venue-street" /><input name="venue-city" />
+        <input name="venue-state" /><input name="venue-zip" /><input name="website" />
+        <textarea name="comments"></textarea>
+      </form>
+      <form name="salvation-decision" data-netlify="true" netlify-honeypot="bot-field">
+        <input name="bot-field" /><input name="name" /><input name="email" /><input name="phone" />
+        <textarea name="message"></textarea>
+      </form>
+      <form name="contact" data-netlify="true" netlify-honeypot="bot-field">
+        <input name="bot-field" /><input name="name" /><input name="email" /><input name="phone" />
+        <input name="topic" /><textarea name="message"></textarea>
+      </form>
+    </div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

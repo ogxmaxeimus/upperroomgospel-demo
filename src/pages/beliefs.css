@@ -1,0 +1,143 @@
+/* Beliefs: parchment and ink. Roman numerals, a sticky index, a quiet reading room. */
+html[data-page='beliefs'] {
+  --bg: #f4ecdc;
+  --bg-2: #ebe0c9;
+  --surface: rgb(60 40 10 / 0.04);
+  --line: rgb(60 40 10 / 0.14);
+  --text: #2a2115;
+  --text-2: #5c4f3b;
+  --text-3: #8a7a60;
+  --accent: #8c5a1c;
+  --on-accent: #fff;
+  --focus: #8c5a1c;
+  --header-glass: rgb(244 236 220 / 0.85);
+}
+
+.pg-beliefs {
+  background:
+    radial-gradient(80% 50% at 50% 0%, rgb(255 255 255 / 0.5), transparent 70%),
+    var(--bg);
+}
+
+.bl-hero {
+  padding-top: calc(var(--header-h) + clamp(40px, 7vw, 100px));
+  padding-bottom: clamp(32px, 5vw, 64px);
+  text-align: center;
+}
+
+.bl-hero .lead {
+  margin-inline: auto;
+}
+
+.bl-title {
+  margin: 0 0 16px;
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 1.5rem + 6vw, 6.5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.bl-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: clamp(28px, 5vw, 80px);
+  align-items: start;
+}
+
+.bl-index {
+  position: sticky;
+  top: calc(var(--header-h) + 32px);
+}
+
+.bl-index ol {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 1px solid var(--line);
+}
+
+.bl-index a {
+  display: flex;
+  gap: 12px;
+  margin-left: -1px;
+  padding: 8px 14px;
+  color: var(--text-3);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.bl-index a span {
+  min-width: 2.4em;
+  font-family: var(--font-serif);
+}
+
+.bl-index a[aria-current='true'] {
+  font-weight: 700;
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.bl-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bl-item {
+  position: relative;
+  padding: clamp(32px, 5vw, 64px) 0;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: calc(var(--header-h) + 20px);
+}
+
+.bl-item__num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.bl-item__title {
+  margin: 8px 0 14px;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.4rem);
+  font-weight: 800;
+}
+
+.bl-item__text {
+  max-width: 44ch;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 1rem + 1vw, 1.75rem);
+  line-height: 1.45;
+}
+
+.bl-cta {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.bl-cta__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 1.4rem + 2vw, 3rem);
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .bl-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bl-index {
+    display: none;
+  }
+}

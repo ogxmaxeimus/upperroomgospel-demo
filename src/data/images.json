@@ -1,0 +1,284 @@
+{
+  "congregationBlue": {
+    "src": "/images/congregation-blue.webp",
+    "width": 1920,
+    "height": 1281,
+    "alt": "The Upper Room congregation gathered for worship, seen from above"
+  },
+  "congregationBw": {
+    "src": "/images/congregation-bw.webp",
+    "width": 1920,
+    "height": 1281,
+    "alt": "A packed sanctuary during Sunday worship"
+  },
+  "bishopPreachingBw": {
+    "src": "/images/bishop-preaching-bw.webp",
+    "width": 1920,
+    "height": 1097,
+    "alt": "Bishop Wooden preaching to the congregation"
+  },
+  "bishopPulpit": {
+    "src": "/images/bishop-pulpit.webp",
+    "width": 1920,
+    "height": 835,
+    "alt": "Bishop Patrick L. Wooden, Sr. preaching from the pulpit"
+  },
+  "bishopWelcome": {
+    "src": "/images/bishop-welcome.webp",
+    "width": 1920,
+    "height": 651,
+    "alt": "Bishop Wooden ministering during a Sunday service"
+  },
+  "bishopJesusIsLord": {
+    "src": "/images/bishop-jesus-is-lord.webp",
+    "width": 1600,
+    "height": 900,
+    "alt": "Bishop Wooden at a pulpit that reads Jesus Is Lord"
+  },
+  "bishopPortrait": {
+    "src": "/images/bishop-portrait.webp",
+    "width": 325,
+    "height": 487,
+    "alt": "Portrait of Bishop Patrick L. Wooden, Sr."
+  },
+  "firstLadyPulpit": {
+    "src": "/images/first-lady-pulpit.webp",
+    "width": 1920,
+    "height": 835,
+    "alt": "First Lady Pamela Wooden speaking from the pulpit"
+  },
+  "firstLadyPortrait": {
+    "src": "/images/first-lady-portrait.webp",
+    "width": 300,
+    "height": 423,
+    "alt": "Portrait of First Lady Pamela Wooden"
+  },
+  "woodenFamily": {
+    "src": "/images/wooden-family.webp",
+    "width": 1600,
+    "height": 810,
+    "alt": "Bishop and First Lady Wooden with their family"
+  },
+  "greeting": {
+    "src": "/images/greeting.webp",
+    "width": 1600,
+    "height": 630,
+    "alt": "A church mother warmly greeting a visitor outside the church"
+  },
+  "greetingBw": {
+    "src": "/images/greeting-bw.webp",
+    "width": 1600,
+    "height": 624,
+    "alt": "Members welcoming one another after service"
+  },
+  "bibleHands": {
+    "src": "/images/bible-hands.webp",
+    "width": 1600,
+    "height": 618,
+    "alt": "An open Bible held during worship"
+  },
+  "altarPrayer": {
+    "src": "/images/altar-prayer.webp",
+    "width": 1920,
+    "height": 768,
+    "alt": "A person kneeling in prayer at the altar"
+  },
+  "menWorship": {
+    "src": "/images/men-worship.webp",
+    "width": 1600,
+    "height": 612,
+    "alt": "Men lifting their hands in worship"
+  },
+  "manBible": {
+    "src": "/images/man-bible.webp",
+    "width": 800,
+    "height": 537,
+    "alt": "A man holding his Bible during service"
+  },
+  "manPraying": {
+    "src": "/images/man-praying.webp",
+    "width": 702,
+    "height": 543,
+    "alt": "A man bowing his head in prayer"
+  },
+  "anthonyWilson": {
+    "src": "/images/anthony-wilson.webp",
+    "width": 900,
+    "height": 856,
+    "alt": "Elder Anthony M. Wilson, President of the Men’s Department"
+  },
+  "womenWorship": {
+    "src": "/images/women-worship.webp",
+    "width": 1600,
+    "height": 597,
+    "alt": "A woman worshipping with her hands raised"
+  },
+  "womanPraying": {
+    "src": "/images/woman-praying.webp",
+    "width": 800,
+    "height": 537,
+    "alt": "A woman in prayer with folded hands"
+  },
+  "womanWorshipHand": {
+    "src": "/images/woman-worship-hand.webp",
+    "width": 702,
+    "height": 543,
+    "alt": "A woman worshipping with her eyes closed"
+  },
+  "womanWorship2": {
+    "src": "/images/woman-worship-2.webp",
+    "width": 1150,
+    "height": 750,
+    "alt": "A woman worshipping during service"
+  },
+  "youthCamera": {
+    "src": "/images/youth-camera.webp",
+    "width": 800,
+    "height": 537,
+    "alt": "A young man running a video camera for the media team"
+  },
+  "youthBoy": {
+    "src": "/images/youth-boy.webp",
+    "width": 702,
+    "height": 543,
+    "alt": "A smiling boy in a bow tie at church"
+  },
+  "youthKids": {
+    "src": "/images/youth-kids.webp",
+    "width": 702,
+    "height": 543,
+    "alt": "A minister praying with children at the altar"
+  },
+  "praiseTeam": {
+    "src": "/images/praise-team.webp",
+    "width": 1600,
+    "height": 1067,
+    "alt": "The praise team leading worship on stage"
+  },
+  "praiseSinger1": {
+    "src": "/images/praise-singer-1.webp",
+    "width": 1400,
+    "height": 934,
+    "alt": "A praise team singer leading worship"
+  },
+  "praiseSinger2": {
+    "src": "/images/praise-singer-2.webp",
+    "width": 1400,
+    "height": 934,
+    "alt": "A praise team singer worshipping with a microphone"
+  },
+  "congregationPraise": {
+    "src": "/images/congregation-praise.webp",
+    "width": 1600,
+    "height": 630,
+    "alt": "The congregation clapping and praising together"
+  },
+  "stageDancers": {
+    "src": "/images/stage-dancers.webp",
+    "width": 800,
+    "height": 533,
+    "alt": "Praise dancers ministering during a special program"
+  },
+  "stageSinger": {
+    "src": "/images/stage-singer.webp",
+    "width": 800,
+    "height": 533,
+    "alt": "A soloist ministering in song"
+  },
+  "stageChoir": {
+    "src": "/images/stage-choir.webp",
+    "width": 800,
+    "height": 533,
+    "alt": "Singers performing during the Christmas program"
+  },
+  "stageWide": {
+    "src": "/images/stage-wide.webp",
+    "width": 800,
+    "height": 534,
+    "alt": "The sanctuary stage set for a special service"
+  },
+  "biblesHands": {
+    "src": "/images/bibles-hands.webp",
+    "width": 1920,
+    "height": 768,
+    "alt": "Hands holding open Bibles during study"
+  },
+  "flyerAnniversary": {
+    "src": "/images/flyers/pastoral-anniversary-39.webp",
+    "width": 880,
+    "height": 1100,
+    "alt": "39th Pastoral Anniversary flyer: Convinced to Contend, Sunday, September 20"
+  },
+  "flyerWomensConventionDay": {
+    "src": "/images/flyers/womens-convention-day.webp",
+    "width": 1001,
+    "height": 1100,
+    "alt": "10th Women’s Convention day sessions flyer, September 23–25"
+  },
+  "flyerWomensConventionNight": {
+    "src": "/images/flyers/womens-convention-night.webp",
+    "width": 931,
+    "height": 1100,
+    "alt": "10th Women’s Convention evening services flyer, September 23–25"
+  },
+  "flyerImpactWeekend": {
+    "src": "/images/flyers/impact-weekend.webp",
+    "width": 1024,
+    "height": 576,
+    "alt": "IMPACT Youth & Young Adult Weekend flyer, July 23–26: Remnant Rising"
+  },
+  "flyerFootball": {
+    "src": "/images/flyers/football-camp.webp",
+    "width": 845,
+    "height": 465,
+    "alt": "7th Annual God First Football Camp flyer, June 13"
+  },
+  "flyerCheer": {
+    "src": "/images/flyers/cheer-camp.webp",
+    "width": 718,
+    "height": 1100,
+    "alt": "3rd Annual God First Cheer Camp flyer, June 13, 2026"
+  },
+  "flyerMensRevival": {
+    "src": "/images/flyers/mens-revival.webp",
+    "width": 1100,
+    "height": 608,
+    "alt": "Convinced Men’s Revival Weekend flyer, June 11–14"
+  },
+  "flyerImpactSaturday": {
+    "src": "/images/flyers/impact-saturday.webp",
+    "width": 1100,
+    "height": 1100,
+    "alt": "Impact Saturday flyer: every 4th Saturday, 11 AM to 2 PM"
+  },
+  "flyerGodFirstExperience": {
+    "src": "/images/flyers/god-first-experience.webp",
+    "width": 1100,
+    "height": 620,
+    "alt": "The God First Experience: Sunday worship at 8 and 11 AM, Thursday Bible Study at 7:30 PM"
+  },
+  "flyerHolyConvocation": {
+    "src": "/images/flyers/holy-convocation.webp",
+    "width": 1026,
+    "height": 1100,
+    "alt": "11th Holy Convocation flyer: Convinced to Answer the Call, August 4–7"
+  },
+  "logoWhite": {
+    "src": "/brand/logo-official-white.png",
+    "width": 556,
+    "height": 541,
+    "alt": "Upper Room Church of God in Christ, God First"
+  },
+  "logoGold": {
+    "src": "/brand/logo-official-gold.png",
+    "width": 556,
+    "height": 541,
+    "alt": "Upper Room Church of God in Christ, God First"
+  },
+  "logoNavy": {
+    "src": "/brand/logo-official-navy.png",
+    "width": 556,
+    "height": 541,
+    "alt": "Upper Room Church of God in Christ, God First"
+  }
+}

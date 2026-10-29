@@ -1,0 +1,109 @@
+/* 404: a dark, empty room with a single light left on. */
+.pg-404 {
+  background:
+    radial-gradient(40% 50% at 50% 30%, rgb(238 194 106 / 0.16), transparent 70%),
+    var(--bg);
+}
+
+.nf {
+  display: grid;
+  justify-items: center;
+  gap: 22px;
+  min-height: 92svh;
+  align-content: center;
+  padding-block: calc(var(--header-h) + 48px) 96px;
+  text-align: center;
+}
+
+.nf__mark {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 20px);
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 18vw, 12rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.nf__digit {
+  font-family: var(--font-outline);
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--line-strong);
+}
+
+.nf__mark svg {
+  width: 0.5em;
+  height: 0.7em;
+  color: var(--accent);
+  filter: drop-shadow(0 0 24px var(--glow));
+  animation: nf-flicker 4s steps(1) infinite;
+}
+
+@keyframes nf-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  46% {
+    opacity: 0.35;
+  }
+  48% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 0.5;
+  }
+  54% {
+    opacity: 1;
+  }
+}
+
+.nf__title {
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.nf__lead {
+  max-width: 50ch;
+  color: var(--text-2);
+}
+
+.nf__lead code {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.9em;
+  word-break: break-all;
+}
+
+.nf__mark--soon {
+  font-size: clamp(4rem, 12vw, 7rem);
+}
+
+.nf__mark--soon svg {
+  animation: none;
+}
+
+.nf__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.nf__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.nf__links .chip {
+  text-decoration: none;
+}

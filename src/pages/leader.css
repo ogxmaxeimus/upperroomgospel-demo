@@ -1,0 +1,187 @@
+/* ───────────────────────────────────────────────────────────────────────────────
+   Leaders. Bishop: editorial black and white with gold, magazine cover type.
+   First Lady: rose and champagne on warm light, soft and gracious.
+   ─────────────────────────────────────────────────────────────────────────────── */
+html[data-page='bishop'] {
+  --bg: #0a0a0a;
+  --bg-2: #141414;
+  --surface: rgb(255 255 255 / 0.04);
+  --surface-2: rgb(255 255 255 / 0.08);
+  --text: #f5f3ee;
+  --text-2: #b8b4ab;
+  --text-3: #85817a;
+  --accent: #d8b46a;
+  --on-accent: #161106;
+  --header-glass: rgb(10 10 10 / 0.82);
+}
+
+html[data-page='firstlady'] {
+  --bg: #fbf3ef;
+  --bg-2: #f5e6e0;
+  --surface: rgb(120 40 60 / 0.04);
+  --surface-2: rgb(120 40 60 / 0.08);
+  --line: rgb(120 40 60 / 0.12);
+  --text: #2b1418;
+  --text-2: #6b4a50;
+  --text-3: #95757a;
+  --accent: #b5576f;
+  --on-accent: #fff;
+  --focus: #b5576f;
+  --header-glass: rgb(251 243 239 / 0.82);
+}
+
+.ld-hero {
+  padding: calc(var(--header-h) + clamp(32px, 6vw, 80px)) 0 clamp(40px, 6vw, 80px);
+}
+
+.ld-hero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+
+.ld-title {
+  margin: 0 0 24px;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 1.2rem + 5vw, 5.8rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.ld-quote {
+  max-width: 24ch;
+  margin: 0 0 28px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 1rem + 1.4vw, 2.1rem);
+  line-height: 1.25;
+  color: var(--accent);
+}
+
+.ld-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ld-portrait {
+  position: relative;
+  margin: 0;
+}
+
+.ld-portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.ld--bishop .ld-portrait img,
+.ld--bishop .ld-bio__photo img {
+  filter: grayscale(1) contrast(1.1);
+  border-radius: 2px;
+}
+
+.ld--bishop .ld-portrait::after {
+  content: '';
+  position: absolute;
+  inset: 14px -14px -14px 14px;
+  z-index: -1;
+  border: 1px solid var(--accent);
+}
+
+.ld--bishop .ld-title {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.ld--firstlady .ld-portrait img {
+  border-radius: 999px 999px var(--radius-lg) var(--radius-lg);
+  box-shadow: 0 40px 80px -40px rgb(120 40 60 / 0.45);
+}
+
+.ld--firstlady .ld-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.ld-bio {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+
+.ld-bio__text p {
+  margin: 0 0 1.1em;
+  font-size: 1.18rem;
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+.ld-bio__text p:first-child {
+  font-size: 1.35rem;
+  color: var(--text);
+}
+
+.ld--bishop .ld-bio__text p:first-child::first-letter {
+  float: left;
+  margin: 6px 10px 0 0;
+  font-family: var(--font-condensed);
+  font-size: 4.6rem;
+  font-weight: 800;
+  line-height: 0.8;
+  color: var(--accent);
+}
+
+.ld-bio__photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.ld-book {
+  background: var(--bg-2);
+}
+
+.ld-book__grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(28px, 5vw, 72px);
+}
+
+.ld-h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.2rem + 2.4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ld-book__lead {
+  color: var(--text-2);
+  font-size: 1.1rem;
+}
+
+.ld-book__panel {
+  padding: clamp(20px, 3vw, 36px);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 860px) {
+  .ld-hero__grid,
+  .ld-bio,
+  .ld-book__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ld-portrait {
+    max-width: 420px;
+  }
+}

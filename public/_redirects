@@ -1,0 +1,25 @@
+# Legacy WordPress URLs → new pages (keeps bookmarks, search results, and printed QR codes working)
+/sermons-2                            /watch                            301!
+/giving                               /give                             301!
+/why-we-give                          /give#why                         301!
+/meet-bishop-wooden                   /about/bishop-wooden              301!
+/book-bishop-wooden                   /about/bishop-wooden#book         301!
+/meet-first-lady-wooden               /about/first-lady-wooden          301!
+/book-first-lady-wooden               /about/first-lady-wooden#book     301!
+/statement-of-faith                   /beliefs                          301!
+/how-to-become-a-follower-of-christ   /follow-jesus                     301!
+/youth-ministry                       /ministries/youth                 301!
+/join-youth-ministry                  /ministries/youth#join            301!
+/mens-department                      /ministries/men                   301!
+/mens-ministry                        /ministries/men                   301!
+/join-mens-ministry                   /ministries/men#join              301!
+/womens-ministry                      /ministries/women                 301!
+/join-womens-ministry                 /ministries/women#join            301!
+/music-arts-ministry                  /ministries/music-arts            301!
+/join-music-arts-ministry             /ministries/music-arts#join       301!
+/evangelism                           /ministries/evangelism            301!
+/join-evangelism                      /ministries/evangelism#join       301!
+/contact-us                           /contact                          301!
+
+# Single-page app fallback
+/*                                    /index.html                       200

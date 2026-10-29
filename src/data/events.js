@@ -1,0 +1,327 @@
+/*
+  HOW TO ADD OR EDIT EVENTS
+  ─────────────────────────
+  • Recurring events live in RECURRING_EVENTS. The calendar generates every future date automatically.
+      schedule: { type: 'weekly', days: [0] }                 → every Sunday (0 = Sun … 6 = Sat)
+      schedule: { type: 'monthly', nth: 4, day: 6 }            → 4th Saturday of every month
+      schedule: { ..., months: [3,4,5,6,7,8,9,10] }            → only March–October
+      skip: ['2026-12-26']                                     → cancel specific dates
+  • One-time events live in SPECIAL_EVENTS.
+      date: '2027-03-12', endDate: '2027-03-14' (optional), time: { start: '19:30', end: '21:00' } (optional)
+      tba: '2027-03'  → "Save the date" card when exact dates aren't set yet
+  • All times are Eastern Time (Raleigh). Use 24-hour 'HH:MM'.
+*/
+
+export const CATEGORIES = {
+  worship: { label: 'Worship', color: '#F4C95D' },
+  study: { label: 'Bible Study', color: '#7CC4FF' },
+  youth: { label: 'Youth', color: '#C6FF3D' },
+  men: { label: 'Men', color: '#FF8A3D' },
+  women: { label: 'Women', color: '#FF9CC6' },
+  outreach: { label: 'Outreach', color: '#3EE0C5' },
+  special: { label: 'Special Event', color: '#B794FF' },
+}
+
+export const AUDIENCES = {
+  everyone: 'Everyone',
+  families: 'Families',
+  kids: 'Kids',
+  teens: 'Teens',
+  'young-adults': 'Young Adults',
+  men: 'Men',
+  women: 'Women',
+}
+
+export const RECURRING_EVENTS = [
+  {
+    id: 'sunday-worship-8am',
+    title: 'Sunday Morning Worship',
+    tagline: 'The early service',
+    category: 'worship',
+    audience: ['everyone', 'families', 'kids'],
+    schedule: { type: 'weekly', days: [0] },
+    time: { start: '08:00', end: '09:30' },
+    location: 'Main Sanctuary',
+    summary:
+      'Spirit-filled praise, prayer, and the preached Word, with Children’s Church for ages 4–11 running at the same time.',
+    details: [
+      'Children’s Church for ages 4–11 meets during this service.',
+      'Please park in the back lot unless you have special needs.',
+      'Nursing stations and a room for young children are available.',
+    ],
+    featured: true,
+  },
+  {
+    id: 'sunday-worship-11am',
+    title: 'Sunday Morning Worship',
+    tagline: 'Streamed live',
+    category: 'worship',
+    audience: ['everyone', 'families'],
+    schedule: { type: 'weekly', days: [0] },
+    time: { start: '11:00', end: '13:00', showEnd: false },
+    location: 'Main Sanctuary',
+    online: true,
+    summary:
+      'Worship with the whole Upper Room family as Bishop Wooden brings the Word, in person or live online.',
+    details: [
+      'Both the front and back parking lots are open.',
+      'Streamed live on YouTube and Facebook.',
+      'Ushers and the hospitality team are ready to help you find a seat.',
+    ],
+    replay: 'service',
+    featured: true,
+  },
+  {
+    id: 'thursday-bible-study',
+    title: 'Thursday Night Bible Study',
+    tagline: 'Go deeper in the Word',
+    category: 'study',
+    audience: ['everyone'],
+    schedule: { type: 'weekly', days: [4] },
+    time: { start: '19:30', end: '21:00', showEnd: false },
+    location: 'Main Sanctuary',
+    online: true,
+    summary: 'Midweek teaching from the Word with Bishop Wooden, in person or live online.',
+    details: ['Bring your Bible and a notebook.', 'Streamed live on YouTube and Facebook.'],
+    replay: 'bible-study',
+    featured: true,
+  },
+  {
+    id: 'generation-now-thursday',
+    title: 'Generation NOW: Thursday Night Teaching',
+    tagline: 'Teens up to 18',
+    category: 'youth',
+    audience: ['teens'],
+    schedule: { type: 'weekly', days: [4] },
+    time: { start: '19:30', end: '21:00', showEnd: false },
+    location: 'Upper Room',
+    summary:
+      'Teens experience God’s Word in a whole new light through engaging activities, thought-provoking discussion, and Bible-based teaching.',
+    details: ['For teens up to 18 years old.', 'Same night as adult Bible Study, so the whole family can come together.'],
+    link: { label: 'Explore Generation NOW', to: '/ministries/youth' },
+  },
+  {
+    id: 'impact-saturday',
+    title: 'Impact Saturday',
+    tagline: 'Every 4th Saturday',
+    category: 'youth',
+    audience: ['kids', 'teens', 'young-adults'],
+    schedule: { type: 'monthly', nth: 4, day: 6 },
+    time: { start: '11:00', end: '14:00' },
+    location: 'Upper Room',
+    summary:
+      'Open to youth of all ages: elementary, middle, high school, and college students. Fellowship, teaching, and fun with every youth auxiliary.',
+    details: [
+      'Auxiliaries represented: Girls of Destiny, Male Academy, Ladies of the King’s Court, Young Men of Valor, Youth Evangelism, and College Ministry.',
+    ],
+    image: 'flyerImpactSaturday',
+    link: { label: 'Explore Generation NOW', to: '/ministries/youth' },
+    featured: true,
+  },
+  {
+    id: 'tuesday-night-sisters',
+    title: '2nd Tuesday Night Sisters',
+    tagline: 'Women’s Bible study · March–October',
+    category: 'women',
+    audience: ['women'],
+    schedule: { type: 'monthly', nth: 2, day: 2, months: [3, 4, 5, 6, 7, 8, 9, 10] },
+    time: { start: '19:00', end: '20:30', showEnd: false },
+    location: 'Sanctuary',
+    summary:
+      'The focal point of the Women’s Ministry: an interactive, socially engaging Bible study built on discipleship, mentorship, and fellowship.',
+    details: ['Meets monthly from March through October.', 'Led under the direction of First Lady Pamela Wooden.'],
+    link: { label: 'Women’s Ministry', to: '/ministries/women' },
+  },
+  {
+    id: 'mens-prayer-call',
+    title: 'Men’s Morning Prayer',
+    tagline: 'Every Tuesday by phone',
+    category: 'men',
+    audience: ['men'],
+    schedule: { type: 'weekly', days: [2] },
+    time: { start: '06:00', end: '06:30' },
+    location: 'Conference call',
+    summary: 'Start the week’s work in prayer with the men of the Upper Room.',
+    details: ['Held by conference call. Contact the Men’s Department for the dial-in.'],
+    link: { label: 'Men’s Department', to: '/ministries/men' },
+  },
+  {
+    id: 'mens-bible-study',
+    title: 'Men-Only Bible Study with Bishop Wooden',
+    tagline: 'Iron sharpens iron',
+    category: 'men',
+    audience: ['men'],
+    schedule: { type: 'monthly', nth: 4, day: 2 },
+    time: { start: '19:30', end: '20:30' },
+    location: 'Upper Room',
+    summary:
+      'Christ’s instructions on manhood, fidelity, and the responsibilities we carry as men of God, straight from the Word.',
+    link: { label: 'Men’s Department', to: '/ministries/men' },
+  },
+  {
+    id: 'community-meal',
+    title: 'Serving Food to the Community',
+    tagline: 'Men’s Department outreach',
+    category: 'outreach',
+    audience: ['men', 'everyone'],
+    schedule: { type: 'monthly', nth: 2, day: 6 },
+    time: { start: '08:30', end: '11:00' },
+    location: 'Upper Room',
+    summary: 'The Men’s Department serves hot food and hope to our neighbors.',
+    link: { label: 'Volunteer with the men', to: '/ministries/men#join' },
+  },
+  {
+    id: 'mens-shelter',
+    title: 'Man Down: Men’s Shelter Service',
+    tagline: 'Meet needs, share Christ',
+    category: 'outreach',
+    audience: ['men'],
+    schedule: { type: 'monthly', nth: 2, day: 6 },
+    time: { start: '17:30', end: '19:30' },
+    location: 'Local men’s shelter',
+    summary:
+      'Serving men who’ve hit a low point in life by meeting physical needs and sharing the Word through Bible study.',
+    link: { label: 'Volunteer with the men', to: '/ministries/men#join' },
+  },
+  {
+    id: 'great-commission',
+    title: 'The Great Commission',
+    tagline: 'Community evangelism',
+    category: 'outreach',
+    audience: ['everyone'],
+    schedule: { type: 'monthly', nth: 3, day: 6 },
+    time: null,
+    location: 'Raleigh neighborhoods',
+    summary: 'We canvass the community with the gospel of Jesus Christ. Time is shared with the team each month.',
+    link: { label: 'Join Evangelism', to: '/ministries/evangelism#join' },
+  },
+]
+
+export const SPECIAL_EVENTS = [
+  {
+    id: 'womens-weekend-2027',
+    title: 'Women’s Weekend 2027',
+    tagline: 'Save the date',
+    category: 'women',
+    audience: ['women'],
+    tba: '2027-03',
+    summary:
+      'Women’s Weekend is moving to March 2027. Dates, speakers, and registration are coming soon, so keep it on your radar.',
+    link: { label: 'Women’s Ministry', to: '/ministries/women' },
+  },
+  {
+    id: 'womens-day-2026',
+    title: 'Women’s Day Year-End Celebration',
+    tagline: 'Prophetess Barbara Calloway',
+    category: 'women',
+    audience: ['everyone'],
+    date: '2026-10-25',
+    time: { start: '11:00', end: '13:00', showEnd: false },
+    location: 'Main Sanctuary',
+    summary:
+      'Bishop and First Lady Wooden welcomed Prophetess Barbara Calloway as the women of the Upper Room celebrated everything God has done this year.',
+    video: '3aP1M-uFvZY',
+  },
+  {
+    id: 'womens-convention-2026',
+    title: '10th Women’s Convention',
+    tagline: 'Convinced to Answer the Call',
+    category: 'special',
+    audience: ['women'],
+    date: '2026-09-23',
+    endDate: '2026-09-25',
+    time: { start: '10:00', end: '21:00', showEnd: false },
+    location: 'NC Third Jurisdictional Headquarters',
+    summary:
+      'Three days of intercessory prayer, day sessions, and evening services for the North Carolina Third Ecclesiastical Jurisdiction.',
+    details: [
+      'Daily intercessory prayer at 9:30 AM, day sessions at 10 AM, evening services at 7:30 PM.',
+      'Friday night: Bishop Patrick L. Wooden, Sr., Jurisdictional Prelate.',
+    ],
+    image: 'flyerWomensConventionNight',
+    gallery: ['flyerWomensConventionNight', 'flyerWomensConventionDay'],
+  },
+  {
+    id: 'pastoral-anniversary-2026',
+    title: '39th Pastoral Anniversary',
+    tagline: 'Convinced to Contend · Jude 1:3',
+    category: 'special',
+    audience: ['everyone'],
+    date: '2026-09-20',
+    time: { start: '08:00', end: '13:00', showEnd: false },
+    location: 'Main Sanctuary',
+    summary:
+      'Celebrating 39 years of pastoral ministry by Bishop Patrick L. Wooden, Sr.: “Convinced in Spirit, Contending in Truth.”',
+    details: [
+      'Speaker: Bishop Roderick L. Hennings, Co-Director, International Men’s Ministry, COGIC.',
+      'Guest psalmist: Dr. Myron Williams, International Music Department President.',
+    ],
+    image: 'flyerAnniversary',
+  },
+  {
+    id: 'holy-convocation-2026',
+    title: '11th Holy Convocation',
+    tagline: 'Convinced to Answer the Call',
+    category: 'special',
+    audience: ['everyone'],
+    date: '2026-08-04',
+    endDate: '2026-08-07',
+    time: { start: '19:30', end: '21:30', showEnd: false },
+    location: 'Upper Room · Jurisdictional Headquarters',
+    summary:
+      'The North Carolina Third Ecclesiastical Jurisdiction gathered for nightly services and daily day services at 9:30 AM.',
+    image: 'flyerHolyConvocation',
+  },
+  {
+    id: 'impact-weekend-2026',
+    title: 'IMPACT Youth & Young Adult Weekend',
+    tagline: 'Remnant Rising',
+    category: 'youth',
+    audience: ['teens', 'young-adults'],
+    date: '2026-07-23',
+    endDate: '2026-07-26',
+    time: { start: '19:30', end: '21:30', showEnd: false },
+    location: 'Upper Room',
+    summary:
+      'A generation convinced to seek Him: four days of worship, Impact Saturday, and a college & young adult cookout.',
+    image: 'flyerImpactWeekend',
+  },
+  {
+    id: 'football-camp-2026',
+    title: '7th Annual God First Football Camp',
+    tagline: 'Free for young men ages 6–18',
+    category: 'youth',
+    audience: ['kids', 'teens'],
+    date: '2026-06-13',
+    time: { start: '09:00', end: '13:30' },
+    location: 'Rise Academy Field',
+    summary:
+      'Hosted by the Men’s Department: Division I coaches and players, top high school coaches, player development drills, one-on-ones, and scholarships.',
+    image: 'flyerFootball',
+  },
+  {
+    id: 'cheer-camp-2026',
+    title: '3rd Annual God First Cheer Camp',
+    tagline: 'Free for girls ages 5–18',
+    category: 'youth',
+    audience: ['kids', 'teens'],
+    date: '2026-06-13',
+    time: { start: '09:00', end: '13:30' },
+    location: 'Rise Academy Field',
+    summary: 'Faith, fun, friendship, confidence, and the basics of cheerleading. No experience needed.',
+    image: 'flyerCheer',
+  },
+  {
+    id: 'mens-revival-2026',
+    title: 'Convinced: Men’s Revival Weekend',
+    tagline: 'June 11–14',
+    category: 'men',
+    audience: ['men', 'everyone'],
+    date: '2026-06-11',
+    endDate: '2026-06-14',
+    time: { start: '19:30', end: '21:30', showEnd: false },
+    location: 'Upper Room',
+    summary: 'Four days of revival with Bishop Amere May, Bishop Phillip Green, and Bishop Patrick L. Wooden, Sr.',
+    image: 'flyerMensRevival',
+  },
+]

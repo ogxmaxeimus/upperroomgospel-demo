@@ -1,0 +1,166 @@
+/* Follow Jesus: a journey from night into morning. Each step gets lighter. */
+html[data-page='follow-jesus'] {
+  --bg: #05060c;
+  --text: #f6f3ea;
+  --text-2: #bdb7a8;
+  --accent: #ffe7a8;
+  --on-accent: #241a02;
+  --header-glass: rgb(5 6 12 / 0.75);
+}
+
+.fj-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  min-height: min(92svh, 860px);
+  padding: var(--header-h) 0 48px;
+  text-align: center;
+}
+
+.fj-hero__light {
+  position: absolute;
+  left: 50%;
+  bottom: -55%;
+  z-index: -1;
+  width: 140vmax;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgb(255 231 168 / 0.5), rgb(255 190 110 / 0.12) 35%, transparent 60%);
+  transform: translateX(-50%);
+  animation: fj-rise 3s var(--ease-out) both;
+}
+
+@keyframes fj-rise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20%);
+  }
+}
+
+.fj-hero__inner .lead {
+  margin-inline: auto;
+}
+
+.fj-title {
+  max-width: 14ch;
+  margin: 0 auto 20px;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 1.4rem + 6vw, 6.4rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.fj-narrow {
+  max-width: 820px;
+}
+
+.fj-step__n {
+  margin: 0 0 18px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.fj-step--1 {
+  background: linear-gradient(180deg, #05060c, #1b1a24);
+}
+
+.fj-step--2 {
+  --text: #2a2216;
+  --text-2: #5d5240;
+  --accent: #a06a12;
+  color: var(--text);
+  background: linear-gradient(180deg, #e9dcc0, #f7efdc);
+}
+
+.fj-step--3 {
+  --text: #1d1a14;
+  --text-2: #5a5446;
+  --accent: #a06a12;
+  --on-accent: #fff;
+  --bg: #fffdf7;
+  --surface: rgb(0 0 0 / 0.04);
+  --line: rgb(0 0 0 / 0.12);
+  color: var(--text);
+  background: #fffdf7;
+}
+
+.fj-verse {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.4rem);
+  line-height: 1.4;
+}
+
+.fj-verse footer {
+  margin-top: 20px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.fj-intro {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--text-2);
+}
+
+.fj-prayer {
+  margin-top: 32px;
+  padding: clamp(24px, 4vw, 48px);
+  background: rgb(255 255 255 / 0.6);
+  border: 1px solid rgb(120 90 30 / 0.2);
+  border-radius: var(--radius-lg);
+}
+
+.fj-prayer p {
+  margin: 0 0 0.6em;
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1rem + 0.8vw, 1.55rem);
+  line-height: 1.5;
+}
+
+.fj-prayer p:first-child,
+.fj-prayer p:nth-last-child(-n + 2) {
+  font-weight: 700;
+}
+
+.fj-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.fj-h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.2rem + 2.4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.fj-form {
+  padding: clamp(20px, 3vw, 36px);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 60px -40px rgb(0 0 0 / 0.3);
+}
+
+@media (max-width: 860px) {
+  .fj-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fj-hero__light {
+    animation: none;
+  }
+}

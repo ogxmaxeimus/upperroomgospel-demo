@@ -1,0 +1,452 @@
+/* ───────────────────────────────────────────────────────────────────────────────
+   Give: "The Treasury". Deep emerald and gold, a tilting giving card, a text
+   message thread and an envelope. Quiet, trustworthy, generous.
+   ─────────────────────────────────────────────────────────────────────────────── */
+html[data-page='give'] {
+  --bg: #03140f;
+  --bg-2: #062019;
+  --surface: rgb(230 255 240 / 0.045);
+  --surface-2: rgb(230 255 240 / 0.085);
+  --line: rgb(220 245 230 / 0.11);
+  --line-strong: rgb(220 245 230 / 0.22);
+  --text: #f1f7f2;
+  --text-2: #b5c9bd;
+  --text-3: #82998c;
+  --accent: #e9c46a;
+  --on-accent: #1a1405;
+  --glow: rgb(233 196 106 / 0.3);
+  --focus: #f4d995;
+  --header-glass: rgb(3 20 15 / 0.78);
+  --gv-emerald: #1f8a64;
+}
+
+.gv-title {
+  margin: 0 0 20px;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 1.4rem + 5vw, 5.6rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.gv-h2 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* ── Hero ───────────────────────────────────────────────────────────────────── */
+.gv-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: calc(var(--header-h) + clamp(40px, 7vw, 96px)) 0 clamp(56px, 8vw, 110px);
+  background:
+    radial-gradient(70% 60% at 80% 30%, rgb(31 138 100 / 0.35), transparent 70%),
+    radial-gradient(50% 50% at 10% 100%, rgb(233 196 106 / 0.1), transparent 70%),
+    var(--bg);
+}
+
+.gv-hero__rays {
+  position: absolute;
+  inset: -40% -10% auto auto;
+  z-index: -1;
+  width: 900px;
+  aspect-ratio: 1;
+  background: repeating-conic-gradient(from 0deg, rgb(233 196 106 / 0.06) 0 4deg, transparent 4deg 14deg);
+  mask: radial-gradient(circle, #000 10%, transparent 65%);
+  animation: gv-spin 120s linear infinite;
+}
+
+@keyframes gv-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.gv-hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(32px, 6vw, 88px);
+  align-items: center;
+}
+
+.gv-funds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 28px 0 22px;
+}
+
+.gv-fund {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px;
+  text-align: left;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s var(--ease-out);
+}
+
+.gv-fund:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+}
+
+.gv-fund[aria-checked='true'] {
+  background: rgb(233 196 106 / 0.08);
+  border-color: var(--accent);
+}
+
+.gv-fund__dot {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border: 2px solid var(--line-strong);
+  border-radius: 50%;
+  transition: border 0.2s;
+}
+
+.gv-fund[aria-checked='true'] .gv-fund__dot {
+  border: 5px solid var(--accent);
+}
+
+.gv-fund__text {
+  display: grid;
+  gap: 4px;
+}
+
+.gv-fund__text small {
+  font-size: 0.82rem;
+  line-height: 1.3;
+  color: var(--text-2);
+}
+
+.gv-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gv-secure {
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-3);
+}
+
+/* ── Card ───────────────────────────────────────────────────────────────────── */
+.gv-card-wrap {
+  perspective: 1100px;
+}
+
+.gv-card {
+  --rx: 4deg;
+  --ry: -10deg;
+  position: relative;
+  display: grid;
+  aspect-ratio: 1.586;
+  padding: clamp(20px, 3vw, 32px);
+  overflow: hidden;
+  color: #1a1405;
+  background:
+    radial-gradient(60% 80% at var(--gx, 30%) var(--gy, 20%), rgb(255 255 255 / 0.55), transparent 60%),
+    linear-gradient(135deg, #f7dc93, #d9a441 48%, #b8862b);
+  border-radius: 22px;
+  box-shadow:
+    0 40px 90px -30px rgb(0 0 0 / 0.7),
+    0 0 0 1px rgb(255 255 255 / 0.25) inset;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 0.5s var(--ease-out);
+  animation: gv-card-in 0.8s var(--ease-out);
+}
+
+@keyframes gv-card-in {
+  from {
+    opacity: 0;
+    transform: rotateX(20deg) rotateY(-30deg) translateY(30px);
+  }
+}
+
+.gv-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.gv-card__mark {
+  width: 70px;
+  height: auto;
+  color: #2a1f07;
+}
+
+.gv-card__chip {
+  width: 48px;
+  height: 36px;
+  background: linear-gradient(135deg, #fff3c9, #c9a14a);
+  border: 1px solid rgb(60 40 0 / 0.3);
+  border-radius: 8px;
+}
+
+.gv-card__label {
+  align-self: end;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.gv-card__name {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 0.8rem + 1.2vw, 1.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.gv-card__foot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  font-family: var(--font-condensed);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Ways ───────────────────────────────────────────────────────────────────── */
+.gv-ways {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.gv-way {
+  padding: clamp(24px, 4vw, 44px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.gv-way__icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 18px;
+  color: var(--accent);
+}
+
+.gv-way__lead {
+  margin: 0 0 24px;
+  color: var(--text-2);
+}
+
+.gv-sms {
+  display: grid;
+  gap: 16px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.gv-sms__row {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+}
+
+.gv-sms__to {
+  justify-self: start;
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+
+.gv-sms__bubble {
+  padding: 10px 18px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, #2fb37f, var(--gv-emerald));
+  border-radius: 20px 20px 6px 20px;
+}
+
+.gv-sms__num {
+  font-size: 0.85rem;
+  color: var(--text-2);
+}
+
+.gv-envelope {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  margin: 0 0 24px;
+  padding: 36px 28px 28px;
+  font-style: normal;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  color: #2a2418;
+  background:
+    repeating-linear-gradient(135deg, #c8372d 0 12px, #fbf6ea 12px 24px, #1f4f99 24px 36px, #fbf6ea 36px 48px) border-box;
+  border: 6px solid transparent;
+  border-radius: 10px;
+}
+
+.gv-envelope::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #fbf6ea;
+  border-radius: 4px;
+}
+
+.gv-envelope > span {
+  position: relative;
+}
+
+.gv-envelope__stamp {
+  position: absolute !important;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 62px;
+  color: #1b5e45;
+  border: 2px dashed #1b5e45;
+  border-radius: 4px;
+  transform: rotate(6deg);
+}
+
+.gv-envelope__stamp svg {
+  width: 38px;
+}
+
+.gv-copy {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.gv-copy svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Why ────────────────────────────────────────────────────────────────────── */
+.gv-why {
+  background: linear-gradient(180deg, transparent, var(--bg-2));
+}
+
+.gv-why__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+
+.gv-why__copy p:last-child {
+  color: var(--text-2);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.gv-video {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.gv-video video {
+  width: 100%;
+  height: 100%;
+}
+
+.gv-video__poster {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+  width: 100%;
+  height: 100%;
+  font: inherit;
+  font-weight: 600;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 50% 45%, rgb(31 138 100 / 0.45), transparent 60%),
+    url('/brand/logo-official-gold.png') center 40% / 28% no-repeat,
+    #02100c;
+  background-blend-mode: normal, soft-light, normal;
+  border: 0;
+  cursor: pointer;
+}
+
+.gv-video__play {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  color: var(--on-accent);
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px rgb(233 196 106 / 0.18);
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.gv-video__poster:hover .gv-video__play {
+  transform: scale(1.08);
+}
+
+.gv-help {
+  padding-bottom: clamp(48px, 6vw, 80px);
+  text-align: center;
+  color: var(--text-2);
+}
+
+.gv-help a {
+  color: var(--accent);
+}
+
+@media (max-width: 880px) {
+  .gv-hero__grid,
+  .gv-ways,
+  .gv-why__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gv-card-wrap {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 520px) {
+  .gv-funds {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gv-hero__rays,
+  .gv-card {
+    animation: none;
+  }
+}

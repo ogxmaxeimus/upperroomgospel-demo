@@ -1,0 +1,222 @@
+/* Contact: a calm control desk. Live office status, tiles you can tap, a map, two tabs. */
+html[data-page='contact'] {
+  --bg: #06101f;
+  --bg-2: #0b182c;
+  --accent: #7cc4ff;
+  --on-accent: #041220;
+  --glow: rgb(124 196 255 / 0.3);
+  --focus: #a9d8ff;
+  --header-glass: rgb(6 16 31 / 0.8);
+}
+
+.pg-contact {
+  padding-bottom: clamp(48px, 7vw, 96px);
+  background: radial-gradient(70% 40% at 80% 0%, rgb(124 196 255 / 0.12), transparent 70%), var(--bg);
+}
+
+.ct-hero {
+  padding-top: calc(var(--header-h) + clamp(32px, 6vw, 80px));
+  padding-bottom: clamp(28px, 4vw, 48px);
+}
+
+.ct-title {
+  max-width: 16ch;
+  margin: 0 0 24px;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 1.3rem + 4.6vw, 5.2rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.ct-status {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.ct-status div {
+  display: grid;
+}
+
+.ct-status span:not(.ct-status__dot) {
+  font-size: 0.85rem;
+  color: var(--text-2);
+}
+
+.ct-status__dot {
+  width: 10px;
+  height: 10px;
+  background: #ff6b6b;
+  border-radius: 50%;
+}
+
+.ct-status[data-open='true'] .ct-status__dot {
+  background: #3ee08f;
+  box-shadow: 0 0 0 0 rgb(62 224 143 / 0.6);
+  animation: ct-pulse 2s infinite;
+}
+
+@keyframes ct-pulse {
+  to {
+    box-shadow: 0 0 0 12px rgb(62 224 143 / 0);
+  }
+}
+
+.ct-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.ct-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ct-tile {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  padding: 22px;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.2s, transform 0.25s var(--ease-out);
+}
+
+a.ct-tile:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.ct-tile > svg {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.ct-tile > span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.ct-tile strong {
+  font-size: 1.08rem;
+  overflow-wrap: anywhere;
+}
+
+.ct-tile--wide {
+  grid-column: span 2;
+}
+
+.ct-tile__cta {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 6px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.ct-tile__cta svg {
+  width: 16px;
+}
+
+.ct-times {
+  display: grid;
+  gap: 6px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-2);
+}
+
+.ct-times strong {
+  margin-right: 8px;
+  color: var(--text);
+}
+
+.ct-map {
+  grid-column: span 2;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.ct-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: invert(0.9) hue-rotate(190deg) saturate(0.7);
+}
+
+.ct-panel {
+  position: sticky;
+  top: calc(var(--header-h) + 20px);
+  padding: clamp(20px, 3vw, 32px);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.ct-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 24px;
+  padding: 4px;
+  background: var(--surface);
+  border-radius: 999px;
+}
+
+.ct-tab {
+  padding: 12px;
+  font: inherit;
+  font-weight: 700;
+  color: var(--text-2);
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.ct-tab[aria-selected='true'] {
+  color: var(--on-accent);
+  background: var(--accent);
+}
+
+@media (max-width: 920px) {
+  .ct-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ct-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 520px) {
+  .ct-info {
+    grid-template-columns: 1fr;
+  }
+
+  .ct-tile--wide,
+  .ct-map {
+    grid-column: auto;
+  }
+}
