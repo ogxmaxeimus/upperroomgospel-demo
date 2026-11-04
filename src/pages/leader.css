@@ -77,9 +77,13 @@ html[data-page='firstlady'] {
   border-radius: var(--radius-lg);
 }
 
-.ld--bishop .ld-portrait img,
+.ld--bishop .ld-portrait img {
+  object-position: 50% 12%;
+  border-radius: 2px;
+}
+
 .ld--bishop .ld-bio__photo img {
-  filter: grayscale(1) contrast(1.1);
+  object-position: 50% 20%;
   border-radius: 2px;
 }
 

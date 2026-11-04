@@ -114,11 +114,89 @@ html[data-page='im-new'] {
   transform: rotate(1.5deg);
 }
 
+.nv-hero__photo {
+  position: relative;
+  background: #0e1630;
+}
+
+.nv-hero__backdrop {
+  position: absolute;
+  inset: -24px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(22px) brightness(0.7);
+}
+
+.nv-hero__video {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+.nv-hero__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  border: 0;
+  background: rgb(14 22 48 / 0.28);
+  color: #fff;
+  cursor: pointer;
+}
+
+.nv-hero__play-icon {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  color: #fff;
+  box-shadow: 0 14px 30px -12px rgb(0 0 0 / 0.6);
+  transition: transform 0.2s ease;
+}
+
+.nv-hero__play-icon svg {
+  width: 30px;
+  height: 30px;
+  margin-left: 4px;
+}
+
+.nv-hero__play-label {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgb(14 22 48 / 0.72);
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nv-hero__play:hover .nv-hero__play-icon {
+  transform: scale(1.06);
+}
+
+.nv-hero__play:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nv-hero__play-icon {
+    transition: none;
+  }
+}
+
 .nv-hero__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 36% 50%;
+  object-position: 50% 40%;
 }
 
 .nv-hero__stamp {

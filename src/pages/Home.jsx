@@ -231,7 +231,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="home-events__aside">
-              <p className="muted">Worship, Bible study, youth nights, outreach: there’s always a place to plug in.</p>
+              <p className="muted">Worship, Bible study, youth events, outreach: there’s always a place to plug in.</p>
               <Link to="/events" className="btn btn--primary">
                 Open the full calendar
                 <ArrowRight aria-hidden="true" />

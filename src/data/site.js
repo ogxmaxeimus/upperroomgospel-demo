@@ -98,7 +98,7 @@ export const NAV = [
       { label: 'Impact Saturdays', desc: 'Elementary to high school · every 4th Saturday', to: '/ministries/youth', accent: '#C6FF3D' },
       { label: 'Men’s Department', desc: 'Iron sharpens iron', to: '/ministries/men', accent: '#FF7A2F' },
       { label: 'Women’s Ministry', desc: 'Discipleship, mentorship, fellowship', to: '/ministries/women', accent: '#F59BC0' },
-      { label: 'Music & Fine Arts', desc: 'Choirs, praise teams, dance & drama', to: '/ministries/music-arts', accent: '#FF3EA5' },
+      { label: 'Music & Fine Arts', desc: 'Choirs, praise teams, dance & drama', to: '/ministries/music-arts', accent: '#9B7BFF' },
       { label: 'Evangelism', desc: 'Raleigh and beyond', to: '/ministries/evangelism', accent: '#2DD4BF' },
       { label: 'THRIVE', desc: 'College & young professionals · 18 to 25', to: '/ministries/thrive', accent: '#F4EFE4' },
       { label: 'FOCUS', desc: 'Young adult ministry · God First', to: '/ministries/focus', accent: '#FFD400' },

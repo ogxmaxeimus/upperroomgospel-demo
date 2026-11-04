@@ -11,12 +11,6 @@
     "height": 1281,
     "alt": "A packed sanctuary during Sunday worship"
   },
-  "bishopPreachingBw": {
-    "src": "/images/bishop-preaching-bw.webp",
-    "width": 1920,
-    "height": 1097,
-    "alt": "Bishop Wooden preaching to the congregation"
-  },
   "bishopPulpit": {
     "src": "/images/bishop-pulpit.webp",
     "width": 1920,
@@ -36,9 +30,9 @@
     "alt": "Bishop Wooden at a pulpit that reads Jesus Is Lord"
   },
   "bishopPortrait": {
-    "src": "/images/bishop-portrait.webp",
-    "width": 325,
-    "height": 487,
+    "src": "/images/bishop-portrait.jpg",
+    "width": 1200,
+    "height": 1200,
     "alt": "Portrait of Bishop Patrick L. Wooden, Sr."
   },
   "firstLadyPulpit": {
@@ -64,6 +58,12 @@
     "width": 1600,
     "height": 630,
     "alt": "A church mother warmly greeting a visitor outside the church"
+  },
+  "welcomeReel": {
+    "src": "/images/welcome-reel.jpg",
+    "width": 1000,
+    "height": 800,
+    "alt": "A smiling Upper Room minister in a pinstripe suit, hand over his heart, welcoming visitors outside the church in autumn"
   },
   "greetingBw": {
     "src": "/images/greeting-bw.webp",
@@ -173,6 +173,12 @@
     "height": 630,
     "alt": "The congregation clapping and praising together"
   },
+  "prayingCongregation": {
+    "src": "/images/praying-congregation.jpg",
+    "width": 911,
+    "height": 683,
+    "alt": "Worshippers with eyes closed and hands raised in prayer"
+  },
   "stageDancers": {
     "src": "/images/stage-dancers.webp",
     "width": 800,
@@ -280,5 +286,11 @@
     "width": 556,
     "height": 541,
     "alt": "Upper Room Church of God in Christ, God First"
+  },
+  "bishopPreaching": {
+    "src": "/images/bishop-preaching.jpg",
+    "width": 546,
+    "height": 683,
+    "alt": "Bishop Wooden preaching to the congregation"
   }
 }

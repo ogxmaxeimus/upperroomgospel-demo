@@ -31,7 +31,7 @@ export const DEPARTMENTS = {
     name: 'Music & Fine Arts',
     kicker: 'Worship in every art form',
     to: '/ministries/music-arts',
-    accent: '#FF3EA5',
+    accent: '#9B7BFF',
     image: 'praiseTeam',
     blurb: 'A vibrant community of Spirit-filled believers who worship God through their gifts.',
   },
@@ -70,14 +70,6 @@ export const DEPARTMENTS = {
 */
 export const GROUPS = [
   // Impact Saturdays (youth)
-  {
-    name: 'Thursday Night Teaching',
-    dept: 'youth',
-    tags: ['teens'],
-    ages: [13, 18],
-    when: 'Thursdays · 7:30 PM',
-    desc: 'Teens up to 18 experience God’s Word in a whole new light through activities, discussion, and Bible-based teaching.',
-  },
   {
     name: 'Children’s Church',
     dept: 'youth',
@@ -411,6 +403,5 @@ export const FINDER_FILTERS = [
   { id: 'women', label: 'Women' },
   { id: 'seniors', label: 'Seasoned Saints' },
   { id: 'music', label: 'Singers & Musicians' },
-  { id: 'serve', label: 'Servants & Volunteers' },
   { id: 'outreach', label: 'Outreach' },
 ]

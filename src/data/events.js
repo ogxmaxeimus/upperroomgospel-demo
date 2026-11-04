@@ -87,20 +87,6 @@ export const RECURRING_EVENTS = [
     featured: true,
   },
   {
-    id: 'generation-now-thursday',
-    title: 'Thursday Night Teaching',
-    tagline: 'Teens up to 18',
-    category: 'youth',
-    audience: ['teens'],
-    schedule: { type: 'weekly', days: [4] },
-    time: { start: '19:30', end: '21:00', showEnd: false },
-    location: 'Upper Room',
-    summary:
-      'Teens experience God’s Word in a whole new light through engaging activities, thought-provoking discussion, and Bible-based teaching.',
-    details: ['For teens up to 18 years old.', 'Same night as adult Bible Study, so the whole family can come together.'],
-    link: { label: 'Explore Impact Saturdays', to: '/ministries/youth' },
-  },
-  {
     id: 'impact-saturday',
     title: 'Impact Saturdays',
     tagline: 'Every 4th Saturday · Elementary to high school',

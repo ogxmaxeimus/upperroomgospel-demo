@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react'
 import DeptPage, { DeptSection } from '../components/DeptPage.jsx'
 import Img from '../components/Img.jsx'
 import Reveal from '../components/Reveal.jsx'
@@ -28,8 +29,9 @@ export default function Men() {
     <DeptPage
       id="men"
       themeColor="#111213"
+      video={{ src: '/video/men-hero.mp4', poster: '/video/men-hero-poster.jpg' }}
       title="Mighty men of God"
-      heroWord="IRON"
+      hideTitle
       lead="Join us at the Upper Room COGIC as we form a community of mighty men who love God, family, and ministry."
       groupsTitle="Opportunities to serve"
       join={{
@@ -89,6 +91,24 @@ export default function Men() {
               manhood, fidelity, and every responsibility we are called to shoulder as men of God.
             </p>
           </div>
+        </Reveal>
+      </DeptSection>
+
+      <DeptSection eyebrow="Beyond Sunday" title="Upper Room COGIC Network">
+        <Reveal className="dp-card mn-network">
+          <p className="dp-prose">
+            The Upper Room COGIC Network is an online directory of professionals in our church family. Search by job
+            type, specialty, or city to find members who offer their skills, services, and mentorship, from creative
+            and technology to trades, healthcare, law, finance, and ministry.
+          </p>
+          <p className="dp-prose">
+            Looking for a mentor, a trusted service provider, or a way to share your own gifts? Browse the network and
+            connect with brothers across the community.
+          </p>
+          <a className="btn btn--primary" href="https://upper-room-cogic-network.netlify.app/" target="_blank" rel="noreferrer">
+            Visit the Network
+            <ArrowUpRight aria-hidden="true" />
+          </a>
         </Reveal>
       </DeptSection>
     </DeptPage>

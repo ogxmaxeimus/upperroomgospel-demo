@@ -54,7 +54,7 @@ export default function Events() {
     themeColor: '#03060f',
     title: 'Events',
     description:
-      'Every service, Bible study, youth night, outreach, and special event at the Upper Room. Searchable, filterable, and one tap from your calendar.',
+      'Every service, Bible study, youth event, outreach, and special event at the Upper Room. Searchable, filterable, and one tap from your calendar.',
   })
 
   const now = useNow(60000)
@@ -163,7 +163,7 @@ export default function Events() {
               <em className="ev-hero__sub">at the Upper Room.</em>
             </h1>
             <p className="ev-hero__lead">
-              Services, Bible study, youth nights, outreach, and special events, all in one place. Tap any event to
+              Services, Bible study, youth events, outreach, and special events, all in one place. Tap any event to
               add it to your calendar.
             </p>
             <dl className="ev-stats">

@@ -1,4 +1,5 @@
-import { ArrowRight, Baby, Car, HandHeart, MapPin, Navigation, Phone, Plus, Sparkles, Users } from 'lucide-react'
+import { ArrowRight, Baby, Car, HandHeart, MapPin, Navigation, Phone, Play, Plus, Sparkles, Users } from 'lucide-react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router'
 import AddToCalendar from '../components/AddToCalendar.jsx'
 import { Choices, Field, FormShell, FormSuccess } from '../components/Form.jsx'
@@ -11,6 +12,44 @@ import { usePage } from '../hooks/usePage.js'
 import { getEvent, nextOccurrence } from '../lib/events.js'
 import { formatDate, formatTime, relativeDayLabel, todayKey } from '../lib/time.js'
 import './im-new.css'
+
+function WelcomeVideo() {
+  const videoRef = useRef(null)
+  const [started, setStarted] = useState(false)
+
+  const start = () => {
+    const video = videoRef.current
+    if (!video) return
+    video.muted = false
+    video.controls = true
+    setStarted(true)
+    video.play().catch(() => {})
+  }
+
+  return (
+    <>
+      <div className="nv-hero__backdrop" style={{ backgroundImage: 'url(/video/welcome-poster.jpg)' }} aria-hidden="true" />
+      <video
+        ref={videoRef}
+        className="nv-hero__video"
+        src="/video/welcome.mp4"
+        poster="/video/welcome-poster.jpg"
+        preload="metadata"
+        playsInline
+        aria-label="Welcome video from Upper Room Gospel Church"
+        onEnded={() => setStarted(false)}
+      />
+      {!started && (
+        <button type="button" className="nv-hero__play" onClick={start} aria-label="Play welcome video with sound">
+          <span className="nv-hero__play-icon">
+            <Play aria-hidden="true" fill="currentColor" />
+          </span>
+          <span className="nv-hero__play-label">Play with sound</span>
+        </button>
+      )}
+    </>
+  )
+}
 
 const SERVICES = [
   {
@@ -39,7 +78,7 @@ const SERVICES = [
     time: '7:30',
     meridiem: 'PM',
     name: 'Bible Study',
-    perks: ['Midweek teaching with Bishop Wooden', 'Thursday Night Teaching for teens the same night', 'Streamed live on YouTube and Facebook'],
+    perks: ['Midweek teaching with Bishop Wooden', 'Streamed live on YouTube and Facebook'],
   },
 ]
 
@@ -83,7 +122,7 @@ const FAQS = [
   },
   {
     q: 'Is there anything for my kids?',
-    a: 'Children ages 4–11 attend Children’s Church during the 8 AM service. We also have nursing stations and a special room for young children who may need to step out of the sanctuary. Teens up to 18 meet for Thursday Night Teaching on Thursdays at 7:30 PM, and elementary through high school students gather for Impact Saturdays every 4th Saturday from 11 AM to 2 PM.',
+    a: 'Children ages 4–11 attend Children’s Church during the 8 AM service. We also have nursing stations and a special room for young children who may need to step out of the sanctuary. Elementary through high school students gather for Impact Saturdays every 4th Saturday from 11 AM to 2 PM.',
   },
   {
     q: 'Can I watch online first?',
@@ -234,7 +273,7 @@ export default function ImNew() {
 
           <div className="nv-hero__visual">
             <div className="nv-hero__photo">
-              <Img name="greeting" priority />
+              <WelcomeVideo />
             </div>
             <span className="nv-hero__stamp" aria-hidden="true">
               <span>All are</span>
@@ -295,7 +334,7 @@ export default function ImNew() {
               Your first visit, <span className="accent-word">step by step.</span>
             </h2>
             <div className="nv-steps__photo">
-              <Img name="congregationPraise" />
+              <Img name="prayingCongregation" />
             </div>
           </Reveal>
           <ol className="nv-route" role="list">

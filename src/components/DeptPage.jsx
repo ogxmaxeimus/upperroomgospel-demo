@@ -50,7 +50,7 @@ export function DeptSection({ eyebrow, title, children, className = '', id }) {
   )
 }
 
-export default function DeptPage({ id, themeColor, title, lead, heroWord, image, heroExtra, children, groupsTitle, groupsNumbered, join }) {
+export default function DeptPage({ id, themeColor, title, lead, heroWord, image, video, hideTitle, heroExtra, children, groupsTitle, groupsNumbered, join }) {
   const dept = DEPARTMENTS[id]
   usePage({ id: `dept-${id}`, themeColor, title: dept.name, description: dept.blurb })
   const groups = GROUPS.filter((g) => g.dept === id)
@@ -59,7 +59,23 @@ export default function DeptPage({ id, themeColor, title, lead, heroWord, image,
     <div className={`pg-dept dp--${id}`}>
       <section className="dp-hero">
         <div className="dp-hero__media" aria-hidden="true">
-          <Img name={image ?? dept.image} alt="" priority />
+          {video ? (
+            <video
+              ref={(el) => {
+                if (el && matchMedia('(prefers-reduced-motion: reduce)').matches) el.pause()
+              }}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster={video.poster}
+            >
+              <source src={video.src} type="video/mp4" />
+            </video>
+          ) : (
+            <Img name={image ?? dept.image} alt="" priority />
+          )}
         </div>
         <div className="dp-hero__fx" aria-hidden="true" />
         {heroExtra}
@@ -70,7 +86,7 @@ export default function DeptPage({ id, themeColor, title, lead, heroWord, image,
         )}
         <div className="container dp-hero__inner">
           <p className="eyebrow">{dept.kicker}</p>
-          <h1 className="dp-title">{title}</h1>
+          <h1 className={hideTitle ? 'sr-only' : 'dp-title'}>{title}</h1>
           <p className="lead dp-hero__lead">{lead}</p>
           <div className="dp-hero__actions">
             <a className="btn btn--primary btn--lg" href="#join">
