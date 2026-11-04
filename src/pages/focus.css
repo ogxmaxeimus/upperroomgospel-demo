@@ -1,0 +1,417 @@
+/* FOCUS: charcoal room, one yellow light. */
+html[data-page='dept-focus'] {
+  --bg: #2b2b2b;
+  --bg-2: #3a3a3a;
+  --surface: rgb(255 255 255 / 0.05);
+  --surface-2: rgb(255 255 255 / 0.09);
+  --text: #f5f5f2;
+  --text-2: #c4c4bd;
+  --text-3: #92928b;
+  --accent: #ffd400;
+  --on-accent: #1d1a00;
+  --glow: rgb(255 212 0 / 0.3);
+  --focus: #ffe466;
+  --header-glass: rgb(43 43 43 / 0.84);
+}
+
+.pg-focus {
+  color: var(--text);
+  background: var(--bg);
+}
+
+.fc-kicker {
+  margin: 0 0 14px;
+  font-family: var(--font-condensed);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.fc-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(120px, 15vw, 170px) 0 clamp(64px, 8vw, 110px);
+  background: linear-gradient(160deg, #3a3a3a 0%, #262626 60%, #1c1c1c 100%);
+  --mx: 74%;
+  --my: 46%;
+  --spin: 0deg;
+}
+
+.fc-hero__inner {
+  z-index: 2;
+}
+
+.fc-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.fc-hero__rays {
+  position: absolute;
+  top: 46%;
+  left: 74%;
+  width: 190vmax;
+  height: 190vmax;
+  margin: -95vmax 0 0 -95vmax;
+  pointer-events: none;
+  background: repeating-conic-gradient(from 0deg, rgb(255 212 0 / 0.07) 0deg 6deg, transparent 6deg 20deg);
+  -webkit-mask-image: radial-gradient(circle, #000 0%, transparent 28%);
+  mask-image: radial-gradient(circle, #000 0%, transparent 28%);
+  transform: rotate(var(--spin));
+  animation: fc-rays-in 3.4s ease-out both;
+}
+
+@keyframes fc-rays-in {
+  0%,
+  22% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fc-hero__spot {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(260px circle at var(--mx) var(--my), rgb(255 212 0 / 0.16), transparent 70%);
+  transition: background-position 0.2s;
+}
+
+.fc-hero__beam {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(42% 60% at 74% 46%, rgb(255 212 0 / 0.22), transparent 70%);
+  animation: fc-flicker 3s ease-out both;
+}
+
+@keyframes fc-flicker {
+  0%,
+  10%,
+  18% {
+    opacity: 0;
+  }
+  8%,
+  14%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fc-hero__beam,
+  .fc-hero__rays {
+    animation: none;
+  }
+}
+
+.fc-hero__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr minmax(220px, 0.8fr);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+.fc-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 2rem + 9vw, 9.5rem);
+  font-weight: 900;
+  line-height: 0.85;
+  color: var(--accent);
+  text-shadow: 0 0 40px rgb(255 212 0 / 0.35), 6px 6px 0 rgb(0 0 0 / 0.35);
+}
+
+.fc-title span {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--font-condensed);
+  font-size: clamp(1.2rem, 0.9rem + 1.2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.fc-hero__lead {
+  max-width: 36ch;
+  margin: 24px 0 0;
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+.fc-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.fc-hero__logowrap {
+  display: grid;
+  justify-self: center;
+  width: 100%;
+  max-width: 420px;
+  animation: fc-float 6s ease-in-out infinite;
+}
+
+@keyframes fc-float {
+  50% {
+    transform: translateY(-10px) rotate(-1.5deg);
+  }
+}
+
+.fc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fc-tag {
+  padding: 6px 14px;
+  font-family: var(--font-condensed);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  background: var(--accent);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 rgb(0 0 0 / 0.4);
+  transform: rotate(-2deg);
+  transition: transform 0.2s ease;
+}
+
+.fc-tag--1 {
+  color: var(--accent);
+  background: #1c1c1c;
+  outline: 2px solid var(--accent);
+  transform: rotate(1.5deg);
+}
+
+.fc-tag--2 {
+  transform: rotate(-0.5deg);
+}
+
+.fc-tag:hover {
+  transform: rotate(0deg) scale(1.08);
+}
+
+.fc-hero__logo {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgb(255 212 0 / 0.25), 0 0 120px rgb(255 212 0 / 0.25);
+}
+
+.fc-first {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: radial-gradient(60% 80% at 50% 50%, rgb(255 212 0 / 0.1), transparent 70%), #2b2b2b;
+}
+
+.fc-first .container {
+  position: relative;
+  z-index: 2;
+}
+
+.fc-ticker {
+  overflow: hidden;
+  padding: 14px 0;
+  color: var(--on-accent);
+  background: var(--accent);
+  border-block: 3px solid #1c1c1c;
+  transform: rotate(-1deg);
+  margin: -6px -2vw;
+  position: relative;
+  z-index: 3;
+}
+
+.fc-ticker--rev {
+  color: var(--accent);
+  background: #1c1c1c;
+  border-color: var(--accent);
+  transform: rotate(1deg);
+}
+
+.fc-ticker__track {
+  display: flex;
+  width: max-content;
+  animation: fc-marquee 38s linear infinite;
+}
+
+.fc-ticker--rev .fc-ticker__track {
+  animation-direction: reverse;
+}
+
+.fc-ticker__set {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.fc-ticker__set span {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-condensed);
+  font-size: clamp(1.3rem, 1rem + 1.5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.fc-ticker__set b {
+  padding: 0 1.1em;
+  font-weight: 400;
+}
+
+@keyframes fc-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fc-ticker__track,
+  .fc-hero__logowrap {
+    animation: none;
+  }
+
+  .fc-ticker {
+    overflow-x: auto;
+  }
+}
+
+.fc-motto {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 1.5rem + 9vw, 10rem);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.fc-motto mark {
+  padding: 0 0.12em;
+  color: var(--on-accent);
+  background: var(--accent);
+}
+
+.fc-h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.3rem + 2.2vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.fc-follow {
+  background: #1c1c1c;
+}
+
+.fc-follow__lead {
+  max-width: 52ch;
+  margin: 0 0 32px;
+  color: var(--text-2);
+}
+
+.fc-follow__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.fc-social {
+  position: relative;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: clamp(20px, 3vw, 32px);
+  color: var(--text);
+  text-decoration: none;
+  background: var(--bg-2);
+  border-left: 6px solid var(--accent);
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.fc-social--ig {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4210 100%);
+}
+
+.fc-social:hover {
+  background: #444;
+  box-shadow: 0 0 40px rgb(255 212 0 / 0.22), 6px 6px 0 var(--accent);
+  transform: translate(-3px, -3px);
+}
+
+.fc-social__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  color: var(--accent);
+}
+
+.fc-social__body {
+  display: grid;
+  flex: 1;
+  gap: 2px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.fc-social__body strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.fc-social__body span {
+  color: var(--text-2);
+}
+
+.fc-social__arrow {
+  flex-shrink: 0;
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.fc-social:hover .fc-social__arrow {
+  transform: translate(4px, -4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fc-social:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .fc-hero__inner,
+  .fc-follow__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fc-hero__logowrap {
+    max-width: 240px;
+    justify-self: start;
+  }
+
+  .fc-hero__rays {
+    left: 50%;
+    top: 78%;
+  }
+}

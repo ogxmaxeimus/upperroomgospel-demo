@@ -45,7 +45,8 @@
 
 .logo__img {
   width: auto;
-  height: 64px;
+  height: 74px;
+  translate: 0 6px;
   transition: transform 0.5s var(--ease-spring);
 }
 
@@ -341,7 +342,7 @@ a:hover .logo__img {
 
 @media (max-width: 560px) {
   .logo__img {
-    height: 46px;
+    height: 54px;
   }
 
   .site-header__give {

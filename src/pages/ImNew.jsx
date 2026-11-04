@@ -39,7 +39,7 @@ const SERVICES = [
     time: '7:30',
     meridiem: 'PM',
     name: 'Bible Study',
-    perks: ['Midweek teaching with Bishop Wooden', 'Generation NOW teens meet the same night', 'Streamed live on YouTube and Facebook'],
+    perks: ['Midweek teaching with Bishop Wooden', 'Thursday Night Teaching for teens the same night', 'Streamed live on YouTube and Facebook'],
   },
 ]
 
@@ -83,7 +83,7 @@ const FAQS = [
   },
   {
     q: 'Is there anything for my kids?',
-    a: 'Children ages 4–11 attend Children’s Church during the 8 AM service. We also have nursing stations and a special room for young children who may need to step out of the sanctuary. Teens up to 18 meet for Generation NOW on Thursdays at 7:30 PM.',
+    a: 'Children ages 4–11 attend Children’s Church during the 8 AM service. We also have nursing stations and a special room for young children who may need to step out of the sanctuary. Teens up to 18 meet for Thursday Night Teaching on Thursdays at 7:30 PM, and elementary through high school students gather for Impact Saturdays every 4th Saturday from 11 AM to 2 PM.',
   },
   {
     q: 'Can I watch online first?',

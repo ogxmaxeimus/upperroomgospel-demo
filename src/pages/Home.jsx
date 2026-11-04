@@ -24,7 +24,7 @@ import './home.css'
 
 const publishedFormat = new Intl.DateTimeFormat('en-US', { timeZone: TZ, month: 'long', day: 'numeric', year: 'numeric' })
 
-const PILLARS = ['Worship', 'The Word', 'Prayer', 'Fellowship', 'Evangelism', 'Generation NOW', 'Keep God First']
+const PILLARS = ['Worship', 'The Word', 'Prayer', 'Fellowship', 'Evangelism', 'Impact Saturdays', 'Keep God First']
 
 function NextServiceBand({ now }) {
   const live = liveWindowStatus(now)
@@ -110,7 +110,19 @@ export default function Home() {
     <div className="pg-home">
       <section className="home-hero">
         <div className="home-hero__media" aria-hidden="true">
-          <Img name="congregationBlue" alt="" priority />
+          <video
+            ref={(el) => {
+              if (el && matchMedia('(prefers-reduced-motion: reduce)').matches) el.pause()
+            }}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/video/hero-poster.jpg"
+          >
+            <source src="/video/hero.mp4" type="video/mp4" />
+          </video>
         </div>
         <EmberField className="home-hero__embers" />
         <div className="home-hero__inner container--wide">
@@ -123,14 +135,10 @@ export default function Home() {
             <span className="home-hero__name" translate="no">
               Upper Room Church of God in Christ
             </span>
-            <span className="home-hero__motto">
-              <span className="home-hero__word">Keep</span> <em className="home-hero__word home-hero__word--accent">God</em>{' '}
-              <span className="home-hero__word">First.</span>
-            </span>
           </h1>
           <p className="home-hero__lead">
-            A Spirit-filled church family in Raleigh, North Carolina, pastored by Bishop Patrick L. Wooden, Sr. and First
-            Lady Pamela Wooden. Come as you are. We saved you a seat.
+            A Spirit-filled church family in Raleigh, North Carolina, pastored by Bishop Patrick L. Wooden, Sr. Come as
+            you are. We saved you a seat.
           </p>
           <div className="home-hero__ctas">
             <Link to="/im-new" className="btn btn--primary btn--lg">

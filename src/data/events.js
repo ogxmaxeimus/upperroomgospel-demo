@@ -88,7 +88,7 @@ export const RECURRING_EVENTS = [
   },
   {
     id: 'generation-now-thursday',
-    title: 'Generation NOW: Thursday Night Teaching',
+    title: 'Thursday Night Teaching',
     tagline: 'Teens up to 18',
     category: 'youth',
     audience: ['teens'],
@@ -98,24 +98,24 @@ export const RECURRING_EVENTS = [
     summary:
       'Teens experience God’s Word in a whole new light through engaging activities, thought-provoking discussion, and Bible-based teaching.',
     details: ['For teens up to 18 years old.', 'Same night as adult Bible Study, so the whole family can come together.'],
-    link: { label: 'Explore Generation NOW', to: '/ministries/youth' },
+    link: { label: 'Explore Impact Saturdays', to: '/ministries/youth' },
   },
   {
     id: 'impact-saturday',
-    title: 'Impact Saturday',
-    tagline: 'Every 4th Saturday',
+    title: 'Impact Saturdays',
+    tagline: 'Every 4th Saturday · Elementary to high school',
     category: 'youth',
-    audience: ['kids', 'teens', 'young-adults'],
+    audience: ['kids', 'teens'],
     schedule: { type: 'monthly', nth: 4, day: 6 },
     time: { start: '11:00', end: '14:00' },
     location: 'Upper Room',
     summary:
-      'Open to youth of all ages: elementary, middle, high school, and college students. Fellowship, teaching, and fun with every youth auxiliary.',
+      'Open to elementary, middle, and high school students. Fellowship, teaching, and fun with every youth auxiliary.',
     details: [
-      'Auxiliaries represented: Girls of Destiny, Male Academy, Ladies of the King’s Court, Young Men of Valor, Youth Evangelism, and College Ministry.',
+      'Auxiliaries represented: Girls of Destiny, Male Academy, Ladies of the King’s Court, Young Men of Valor, and Youth Evangelism.',
     ],
     image: 'flyerImpactSaturday',
-    link: { label: 'Explore Generation NOW', to: '/ministries/youth' },
+    link: { label: 'Explore Impact Saturdays', to: '/ministries/youth' },
     featured: true,
   },
   {

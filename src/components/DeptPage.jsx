@@ -25,6 +25,11 @@ export function GroupGrid({ groups, numbered = false }) {
           <h3 className="dp-group__name">{g.name}</h3>
           <p className="dp-group__desc">{g.desc}</p>
           {g.when && <p className="dp-group__when">{g.when}</p>}
+          {(g.links || (g.link ? [g.link] : [])).map((l) => (
+            <a key={l.href} className="dp-group__link" href={l.href} target="_blank" rel="noreferrer">
+              {l.label}
+            </a>
+          ))}
         </Reveal>
       ))}
     </ul>

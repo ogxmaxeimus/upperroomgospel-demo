@@ -34,6 +34,8 @@ const pages = {
   women: load('Women'),
   musicArts: load('MusicArts'),
   evangelism: load('Evangelism'),
+  thrive: load('Thrive'),
+  focus: load('Focus'),
   contact: load('Contact'),
   notFound: load('NotFound'),
 }
@@ -66,6 +68,8 @@ const router = createBrowserRouter([
           { path: 'ministries/women', lazy: page(pages.women) },
           { path: 'ministries/music-arts', lazy: page(pages.musicArts) },
           { path: 'ministries/evangelism', lazy: page(pages.evangelism) },
+          { path: 'ministries/thrive', lazy: page(pages.thrive) },
+          { path: 'ministries/focus', lazy: page(pages.focus) },
           { path: 'contact', lazy: page(pages.contact) },
           ...Object.entries(LEGACY).map(([path, to]) => ({ path, element: <Navigate to={to} replace /> })),
           { path: '*', lazy: page(pages.notFound) },

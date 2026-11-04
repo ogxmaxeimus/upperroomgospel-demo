@@ -33,7 +33,7 @@ export default function Ministries() {
           <br />
           <span className="accent-word">for you here.</span>
         </h1>
-        <p className="lead">{GROUPS.length} groups across five departments. Tell us who you are and we’ll show you where to start.</p>
+        <p className="lead">{GROUPS.length} groups across seven ministries. Tell us who you are and we’ll show you where to start.</p>
       </section>
 
       <section className="container mi-depts">

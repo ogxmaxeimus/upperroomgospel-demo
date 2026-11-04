@@ -1,12 +1,12 @@
 export const DEPARTMENTS = {
   youth: {
     id: 'youth',
-    name: 'Generation NOW',
-    kicker: 'Youth Ministry',
+    name: 'Impact Saturdays',
+    kicker: 'Elementary to High School · Every 4th Saturday',
     to: '/ministries/youth',
     accent: '#C6FF3D',
     image: 'youthCamera',
-    blurb: 'Equipping young men and women to stand on God’s Truth in any situation, at any moment.',
+    blurb: 'Equipping elementary through high school students to stand on God’s Truth in any situation, at any moment.',
   },
   men: {
     id: 'men',
@@ -44,14 +44,32 @@ export const DEPARTMENTS = {
     image: 'biblesHands',
     blurb: 'Showing the love and mercy of Christ to Raleigh and our regional community.',
   },
+  thrive: {
+    id: 'thrive',
+    name: 'THRIVE',
+    kicker: 'College & Young Professionals · 18 to 25',
+    to: '/ministries/thrive',
+    accent: '#F4EFE4',
+    image: 'congregationPraise',
+    blurb: 'A community for students and young adults (18 to 25). College or career, it’s a place to arise, be planted, and thrive.',
+  },
+  focus: {
+    id: 'focus',
+    name: 'FOCUS Young Adult Ministry',
+    kicker: 'Young Adults · God First',
+    to: '/ministries/focus',
+    accent: '#FFD400',
+    image: 'bibleHands',
+    blurb: 'The young adult ministry of Upper Room COGIC. God First.',
+  },
 }
 
 /*
   tags: who a group is for (used by the "Find your place" filters).
-  ages: [min, max] for youth groups (used by the Generation NOW age picker).
+  ages: [min, max] for youth groups (used by the youth age picker).
 */
 export const GROUPS = [
-  // Generation NOW
+  // Impact Saturdays (youth)
   {
     name: 'Thursday Night Teaching',
     dept: 'youth',
@@ -104,11 +122,22 @@ export const GROUPS = [
     desc: 'Today’s youth are the light of the world. The result is a tightly knit community of young believers intent on sharing Christ wherever they go.',
   },
   {
-    name: 'College Ministry',
-    dept: 'youth',
+    name: 'THRIVE',
+    dept: 'thrive',
     tags: ['young-adults'],
-    ages: [18, 25],
-    desc: 'College students stay connected through Impact Saturday and the college & young adult gatherings.',
+    kind: 'College & Young Professionals',
+    desc: 'A community for students and young adults (18 to 25). College or career, it’s a place to arise, be planted, and thrive.',
+    link: { label: 'Follow @urthrive_1825 on Instagram', href: 'https://www.instagram.com/urthrive_1825/' },
+  },
+  {
+    name: 'FOCUS Young Adult Ministry',
+    dept: 'focus',
+    tags: ['young-adults'],
+    desc: 'The young adult ministry of Upper Room COGIC. God First.',
+    links: [
+      { label: 'Follow FOCUS on Facebook', href: 'https://www.facebook.com/focusyoungadultministry/' },
+      { label: 'Follow @focusyoungadultministry on Instagram', href: 'https://www.instagram.com/focusyoungadultministry' },
+    ],
   },
 
   // Music & Fine Arts

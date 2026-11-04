@@ -1,0 +1,207 @@
+/* THRIVE: deep navy and cream, serif lettering, a leaf that grows. */
+html[data-page='dept-thrive'] {
+  --bg: #1f3557;
+  --bg-2: #182a46;
+  --surface: rgb(244 239 228 / 0.06);
+  --surface-2: rgb(244 239 228 / 0.11);
+  --text: #f4efe4;
+  --text-2: #d3ccbd;
+  --text-3: #a69f91;
+  --accent: #f4efe4;
+  --on-accent: #1f3557;
+  --glow: rgb(244 239 228 / 0.2);
+  --focus: #fffaf0;
+  --header-glass: rgb(31 53 87 / 0.82);
+}
+
+.pg-thrive {
+  color: var(--text);
+  background: var(--bg);
+}
+
+.th-kicker {
+  margin: 0 0 14px;
+  font-family: var(--font-condensed);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+.th-hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  min-height: min(88svh, 820px);
+  padding: clamp(120px, 16vw, 180px) 0 clamp(64px, 8vw, 110px);
+  background:
+    radial-gradient(60% 70% at 78% 40%, rgb(244 239 228 / 0.1), transparent 70%),
+    linear-gradient(180deg, #182a46, var(--bg));
+}
+
+.th-hero__leaf {
+  position: absolute;
+  right: max(-40px, 4vw);
+  bottom: -20px;
+  width: clamp(220px, 34vw, 460px);
+  height: auto;
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.3;
+}
+
+.th-hero__leaf path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: th-grow 2.4s ease-out forwards;
+}
+
+.th-hero__leaf path:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.th-hero__leaf path:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.th-hero__leaf path:nth-child(4) {
+  animation-delay: 1.3s;
+}
+
+@keyframes th-grow {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .th-hero__leaf path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+.th-hero__inner {
+  position: relative;
+}
+
+.th-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(4.5rem, 2rem + 11vw, 11rem);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: 0.05em;
+}
+
+.th-hero__lead {
+  max-width: 34ch;
+  margin: 28px 0 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1rem + 0.7vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.th-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.pg-thrive .btn--primary {
+  --btn-bg: #f4efe4;
+  --btn-fg: #1f3557;
+}
+
+.th-h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 1.4rem + 2.6vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.th-stages {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  margin: clamp(36px, 5vw, 60px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.th-stage {
+  padding-top: 24px;
+  border-top: 1px solid rgb(244 239 228 / 0.3);
+}
+
+.th-stage__num {
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text-3);
+}
+
+.th-stage__word {
+  margin: 8px 0 12px;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 1.4rem + 1.8vw, 3rem);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.th-stage p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+.th-follow__card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: clamp(28px, 5vw, 56px);
+  background: #f4efe4;
+  border-radius: 6px;
+  color: #1f3557;
+}
+
+.th-follow__card .th-kicker,
+.th-follow__card p {
+  color: #3d5274;
+}
+
+.th-follow__card .btn--primary {
+  --btn-bg: #1f3557;
+  --btn-fg: #f4efe4;
+}
+
+.th-follow__leaf {
+  position: absolute;
+  right: 30%;
+  top: -30px;
+  width: 180px;
+  fill: none;
+  stroke: #1f3557;
+  stroke-width: 2;
+  opacity: 0.1;
+}
+
+@media (max-width: 760px) {
+  .th-stages,
+  .th-follow__card {
+    grid-template-columns: 1fr;
+  }
+}
